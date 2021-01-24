@@ -6,14 +6,14 @@
 3、定义工资查询模块 select_money，用来展示工资数额
 4、定义一个start.py ，启动文件展示最终存款金额
 '''
-from money import saved_money
-from select_money import select_money
-from send_money import send_money
+import money
+import select_money
+import send_money
 
 if __name__ == '__main__':
-    before_salary = saved_money
+    before_salary = money.saved_money
     print(f'原有存款为：{before_salary}')
     add_money = 1000
     print(f'本月工资为：{add_money}')
-    now_salary = select_money(send_money(now_money=1000))
+    now_salary = select_money.select_money(send_money.send_money(now_money=1000))
     print(f'现有存款为：{now_salary}')
